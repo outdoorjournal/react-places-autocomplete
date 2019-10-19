@@ -29,8 +29,8 @@ export const getLatLng = result => {
 export const getAddressData = result => {
   return new Promise((resolve, reject) => {
     try {
-      const countryCode = result.address_components.filter(element => element.types.includes("country"))['short_name'];
-      const cityName = result.address_components.filter(element => element.types.includes("locality"))['long_name'];
+      const countryCode = result.address_components.filter(element => element.types.includes("country"))[0]['short_name'];
+      const cityName = result.address_components.filter(element => element.types.includes("locality"))[0]['long_name'];
       const addressData = {
         countryCode:countryCode,
         cityName:cityName  
