@@ -16,4 +16,5 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 exports.geocodeByAddress = _utils.geocodeByAddress;
 exports.geocodeByPlaceId = _utils.geocodeByPlaceId;
 exports.getLatLng = _utils.getLatLng;
+exports.getAddressData = _utils.getAddressData;
 exports.default = _PlacesAutocomplete2.default;
