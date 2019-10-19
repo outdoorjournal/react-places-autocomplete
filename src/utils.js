@@ -26,11 +26,16 @@ export const getLatLng = result => {
   });
 };
 
-export const getCountryCode = result => {
+export const getAddressData = result => {
   return new Promise((resolve, reject) => {
     try {
-      const countryElement = result.address_components.filter(element => element.types.includes("country"))
-      resolve(countryElement.short_name);
+      const countryCode = result.address_components.filter(element => element.types.includes("country"))['short_name'];
+      const cityName = result.address_components.filter(element => element.types.includes("locality"))['long_name'];
+      const addressData = {
+        countryCode:countryCode,
+        cityName:cityName  
+      }
+      resolve(addressData);
     } catch (e) {
       reject(e);
     }
