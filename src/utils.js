@@ -26,6 +26,17 @@ export const getLatLng = result => {
   });
 };
 
+export const getCountryCode = result => {
+  return new Promise((resolve, reject) => {
+    try {
+      const countryElement = result.address_components.filter(element => element.types.includes("country"))
+      resolve(countryElement.short_name);
+    } catch (e) {
+      reject(e);
+    }
+  });
+};
+
 export const geocodeByPlaceId = placeId => {
   const geocoder = new window.google.maps.Geocoder();
   const OK = window.google.maps.GeocoderStatus.OK;
