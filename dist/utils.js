@@ -36,10 +36,10 @@ var getAddressData = exports.getAddressData = function getAddressData(result) {
     try {
       var countryCode = result.address_components.filter(function (element) {
         return element.types.includes("country");
-      })['short_name'];
+      })[0]['short_name'];
       var cityName = result.address_components.filter(function (element) {
         return element.types.includes("locality");
-      })['long_name'];
+      })[0]['long_name'];
       var addressData = {
         countryCode: countryCode,
         cityName: cityName

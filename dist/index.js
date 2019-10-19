@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.getLatLng = exports.getAddressData = exports.geocodeByPlaceId = exports.geocodeByAddress = undefined;
+exports.getAddressData = exports.getLatLng = exports.geocodeByPlaceId = exports.geocodeByAddress = undefined;
 
 var _PlacesAutocomplete = require('./PlacesAutocomplete');
 

@@ -59,7 +59,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
-	exports.getLatLng = exports.geocodeByPlaceId = exports.geocodeByAddress = undefined;
+	exports.getAddressData = exports.getLatLng = exports.geocodeByPlaceId = exports.geocodeByAddress = undefined;
 	
 	var _PlacesAutocomplete = __webpack_require__(1);
 	
@@ -72,6 +72,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.geocodeByAddress = _utils.geocodeByAddress;
 	exports.geocodeByPlaceId = _utils.geocodeByPlaceId;
 	exports.getLatLng = _utils.getLatLng;
+	exports.getAddressData = _utils.getAddressData;
 	exports.default = _PlacesAutocomplete2.default;
 
 /***/ }),
@@ -3772,10 +3773,10 @@ return /******/ (function(modules) { // webpackBootstrap
 	    try {
 	      var countryCode = result.address_components.filter(function (element) {
 	        return element.types.includes("country");
-	      })['short_name'];
+	      })[0]['short_name'];
 	      var cityName = result.address_components.filter(function (element) {
 	        return element.types.includes("locality");
-	      })['long_name'];
+	      })[0]['long_name'];
 	      var addressData = {
 	        countryCode: countryCode,
 	        cityName: cityName
